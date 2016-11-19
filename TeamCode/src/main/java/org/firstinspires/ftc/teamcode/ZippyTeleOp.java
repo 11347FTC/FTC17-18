@@ -48,6 +48,8 @@ public class ZippyTeleOp extends OpMode {
         rightPoker.setPosition(1);
         //Low Goal Shooter
         lowGoal = hardwareMap.dcMotor.get("lowGoal");
+        backLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        backRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
     @Override
     public void loop() {

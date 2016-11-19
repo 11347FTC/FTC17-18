@@ -2,10 +2,9 @@ package org.firstinspires.ftc.teamcode;
 
 import android.media.MediaCodecInfo;
 
-import com.ftdi.j2xx.FT_EEPROM_232H;
+
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -60,8 +59,8 @@ public class ZippyAutoRedAlliance1 extends LinearOpMode {
         if (opModeIsActive()) {
 
             // Determine new target position, and pass to motor controller
-            newLeftTarget = backLeft.getCurrentPosition() + (int) (leftInches * 200);
-            newRightTarget = backRight.getCurrentPosition() + (int) (rightInches * 200);
+            newLeftTarget = backLeft.getCurrentPosition() + (int) (leftInches);
+            newRightTarget = backRight.getCurrentPosition() + (int) (rightInches);
             backLeft.setTargetPosition(newLeftTarget);
             backRight.setTargetPosition(newRightTarget);
 
