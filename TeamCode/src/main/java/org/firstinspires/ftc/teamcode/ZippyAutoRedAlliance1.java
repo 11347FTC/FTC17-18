@@ -59,8 +59,8 @@ public class ZippyAutoRedAlliance1 extends LinearOpMode {
         if (opModeIsActive()) {
 
             // Determine new target position, and pass to motor controller
-            newLeftTarget = backLeft.getCurrentPosition() + (int) (leftInches);
-            newRightTarget = backRight.getCurrentPosition() + (int) (rightInches);
+            newLeftTarget = backLeft.getCurrentPosition() + (int) (leftInches * 229.19);
+            newRightTarget = backRight.getCurrentPosition() + (int) (rightInches * 229.19);
             backLeft.setTargetPosition(newLeftTarget);
             backRight.setTargetPosition(newRightTarget);
 
