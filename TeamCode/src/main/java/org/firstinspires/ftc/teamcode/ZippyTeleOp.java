@@ -44,12 +44,10 @@ public class ZippyTeleOp extends OpMode {
         backLeft.setDirection(DcMotor.Direction.FORWARD);
         backRight.setDirection(DcMotor.Direction.REVERSE);
         //frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
-        leftPoker.setPosition(0);
-        rightPoker.setPosition(1);
+        leftPoker.setPosition(1);
+        rightPoker.setPosition(0);
         //Low Goal Shooter
         lowGoal = hardwareMap.dcMotor.get("lowGoal");
-        backLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        backRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
     @Override
     public void loop() {
@@ -63,12 +61,12 @@ public class ZippyTeleOp extends OpMode {
 
         if (gamepad2.left_bumper){
             //poking for beacons
-            leftPoker.setPosition(0.55);
-            rightPoker.setPosition(1);}
+            leftPoker.setPosition(0.5);
+            rightPoker.setPosition(0);}
 
         if (gamepad2.right_bumper){
-            rightPoker.setPosition(0.45);
-            leftPoker.setPosition(0);}
+            rightPoker.setPosition(0.5);
+            leftPoker.setPosition(1);}
 
 
 //Looked at the sample code
@@ -85,21 +83,22 @@ public class ZippyTeleOp extends OpMode {
         //Tank Drive with only two motors
 
 
-        if (gamepad2.a) {
+        /*if (gamepad2.a) {
             backLeft.setPower(powery/2);
             backRight.setPower(powerv/2.1);
                     }
         if (gamepad2.b) {
             backLeft.setPower(powery/4);
             backRight.setPower(powerv/4.1);
-        }
+        }*/
+        //failed turbo mode
         /*driving for the mechanums
         *frontLeftMotor.setPower(powery - powerx + powerz);
         *frontRightMotor.setPower(powery + powerx - powerz);
         *backRightMotor.setPower(powery - powerx - powerz);
         *backLeft.setPower(powery + powerx + powerz);
         */
-
+//Turbo Mode doesn't seem to work
         //LowGoal
         lowGoal.setPower(goalPower);
         //need to test these asap
