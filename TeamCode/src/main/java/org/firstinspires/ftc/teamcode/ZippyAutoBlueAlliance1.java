@@ -19,8 +19,8 @@ import java.sql.Time;
 /**
  * Created by Ganondorf on 11/16/2016.
  */
-@Autonomous (name="ZippyAutoRed1", group="Zippy")
-public class ZippyAutoRedAlliance1 extends LinearOpMode {
+@Autonomous (name="ZippyAutoBlue1", group="Zippy")
+public class ZippyAutoBlueAlliance1 extends LinearOpMode {
     //DcMotor frontLeftMotor = null;
     //DcMotor frontRightMotor = null;
     //For Mechanum
@@ -74,19 +74,19 @@ public class ZippyAutoRedAlliance1 extends LinearOpMode {
         DriveForwardTime(DriveSpeed,1000);
 
         //Turn 90 degrees
-        TurnLeftTime(TurnSpeed, 350);
+        TurnRightTime(TurnSpeed, 350);
         //Move Forward for almost 5ft
         DriveForwardTime(DriveSpeed, 980);
         //Sense beacons
         TurnRightTime(TurnSpeed,100);
-        SenseRed();
+        SenseBlue();
         StraightenLeft(TurnSpeed,100);
         DriveForwardTime(DriveSpeed,20);
         ResetPoker();
         DriveBackwardTime(DriveSpeed,400);
-        TurnRightTime(TurnSpeed, 350);
-        DriveForwardTime(DriveSpeed, 800);
         TurnLeftTime(TurnSpeed, 350);
+        DriveForwardTime(DriveSpeed, 800);
+        TurnRightTime(TurnSpeed, 350);
         DriveForwardTime(DriveSpeed, 380);
         TurnRightTime(TurnSpeed,100);
         SenseRed();
@@ -94,9 +94,9 @@ public class ZippyAutoRedAlliance1 extends LinearOpMode {
         DriveForwardTime(DriveSpeed, 20);
         ResetPoker();
         DriveBackwardTime(DriveSpeed, 20);
-        TurnLeftTime(TurnSpeed, 525);
+        TurnRightTime(TurnSpeed, 525);
         DriveForwardTime(DriveSpeed, 1000);
-        TurnRightTime(TurnSpeed, 350);
+        TurnLeftTime(TurnSpeed, 350);
         DriveForwardTime(DriveSpeed, 1250);
         Shoot(ShootPower, 2000);
 
@@ -119,7 +119,7 @@ public class ZippyAutoRedAlliance1 extends LinearOpMode {
         backRight.setPower(-power);
     }
     public void TimeElapsed(long time) {
-       sleep(time);
+        sleep(time);
     }
     public void DriveForwardTime(double power, long time){
         DriveForward(power);

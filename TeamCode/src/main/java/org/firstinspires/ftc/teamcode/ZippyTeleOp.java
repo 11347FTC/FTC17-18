@@ -44,8 +44,8 @@ public class ZippyTeleOp extends OpMode {
         backLeft.setDirection(DcMotor.Direction.FORWARD);
         backRight.setDirection(DcMotor.Direction.REVERSE);
         //frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
-        leftPoker.setPosition(1);
-        rightPoker.setPosition(0);
+        leftPoker.setPosition(0);
+        rightPoker.setPosition(1);
         //Low Goal Shooter
         lowGoal = hardwareMap.dcMotor.get("lowGoal");
     }
@@ -61,12 +61,16 @@ public class ZippyTeleOp extends OpMode {
 
         if (gamepad2.left_bumper){
             //poking for beacons
-            leftPoker.setPosition(0.5);
-            rightPoker.setPosition(0);}
+            leftPoker.setPosition(0.75);
+            rightPoker.setPosition(1);}
 
         if (gamepad2.right_bumper){
-            rightPoker.setPosition(0.5);
-            leftPoker.setPosition(1);}
+            rightPoker.setPosition(0.25);
+            leftPoker.setPosition(0);}
+        if (gamepad2.y){
+            rightPoker.setPosition(1);
+            leftPoker.setPosition(0);
+        }
 
 
 //Looked at the sample code
@@ -81,6 +85,8 @@ public class ZippyTeleOp extends OpMode {
         Range.clip(goalPower, -0.75, 0.75);
         //The range of the servo that we want to work with is till halfway of where it can turn
         //Tank Drive with only two motors
+        backLeft.setPower(powery/4);
+        backRight.setPower(powerv/4);
 
 
         /*if (gamepad2.a) {
