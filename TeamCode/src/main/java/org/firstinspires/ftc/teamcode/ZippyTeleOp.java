@@ -85,8 +85,8 @@ public class ZippyTeleOp extends OpMode {
         Range.clip(goalPower, -0.75, 0.75);
         //The range of the servo that we want to work with is till halfway of where it can turn
         //Tank Drive with only two motors
-        backLeft.setPower(powery/4);
-        backRight.setPower(powerv/4);
+        backLeft.setPower(powery*6/10);
+        backRight.setPower(powerv*6/10);
 
 
         /*if (gamepad2.a) {

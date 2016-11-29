@@ -31,7 +31,7 @@ public class ZippyAutoBlueAlliance1 extends LinearOpMode {
     //Low Goal Shooter Motor
     DcMotor lowGoal = null;
     ColorSensor beacon = null;
-    private ElapsedTime runtime = new ElapsedTime();
+
 
 
     double DriveSpeed = 0.5;
@@ -71,33 +71,33 @@ public class ZippyAutoBlueAlliance1 extends LinearOpMode {
         rightPoker.setPosition(1);
 
         //Move Forward for 5ft
-        DriveForwardTime(DriveSpeed,1000);
+        DriveForwardTime(DriveSpeed,1500);
 
         //Turn 90 degrees
         TurnRightTime(TurnSpeed, 350);
         //Move Forward for almost 5ft
-        DriveForwardTime(DriveSpeed, 980);
+        DriveForwardTime(DriveSpeed, 1450);
         //Sense beacons
-        TurnRightTime(TurnSpeed,100);
+        TurnRightTime(TurnSpeed,50);
         SenseBlue();
-        StraightenLeft(TurnSpeed,100);
-        DriveForwardTime(DriveSpeed,20);
+        StraightenLeft(TurnSpeed,50);
+        DriveForwardTime(DriveSpeed,50);
         ResetPoker();
-        DriveBackwardTime(DriveSpeed,400);
+        DriveBackwardTime(DriveSpeed,600);
         TurnLeftTime(TurnSpeed, 350);
-        DriveForwardTime(DriveSpeed, 800);
+        DriveForwardTime(DriveSpeed, 1200);
         TurnRightTime(TurnSpeed, 350);
-        DriveForwardTime(DriveSpeed, 380);
-        TurnRightTime(TurnSpeed,100);
+        DriveForwardTime(DriveSpeed, 550);
+        TurnRightTime(TurnSpeed,50);
         SenseRed();
-        StraightenLeft(TurnSpeed,100);
-        DriveForwardTime(DriveSpeed, 20);
+        StraightenLeft(TurnSpeed,50);
+        DriveForwardTime(DriveSpeed, 50);
         ResetPoker();
-        DriveBackwardTime(DriveSpeed, 20);
+        DriveBackwardTime(DriveSpeed, 600);
         TurnRightTime(TurnSpeed, 525);
-        DriveForwardTime(DriveSpeed, 1000);
+        DriveForwardTime(DriveSpeed, 1500);
         TurnLeftTime(TurnSpeed, 350);
-        DriveForwardTime(DriveSpeed, 1250);
+        DriveForwardTime(DriveSpeed, 1600);
         Shoot(ShootPower, 2000);
 
     }

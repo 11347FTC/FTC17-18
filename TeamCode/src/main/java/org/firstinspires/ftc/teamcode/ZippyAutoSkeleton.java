@@ -1,26 +1,19 @@
 package org.firstinspires.ftc.teamcode;
 
-import android.media.MediaCodecInfo;
-
-
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
-import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
-import com.qualcomm.robotcore.hardware.ColorSensor;
-
-import java.sql.Time;
 
 /**
- * Created by Ganondorf on 11/16/2016.
+ * Created by Ganondorf on 11/27/2016.
  */
-@Autonomous (name="ZippyAutoRed1", group="Zippy")
-public class ZippyAutoRedAlliance1 extends LinearOpMode {
+@Disabled
+@Autonomous(name="ZippyAuto", group="Zippy")
+public class ZippyAutoSkeleton extends LinearOpMode {
     //DcMotor frontLeftMotor = null;
     //DcMotor frontRightMotor = null;
     //For Mechanum
@@ -70,36 +63,6 @@ public class ZippyAutoRedAlliance1 extends LinearOpMode {
         leftPoker.setPosition(0);
         rightPoker.setPosition(1);
 
-        //Move Forward for 5ft
-        DriveForwardTime(DriveSpeed,1500);
-
-        //Turn 90 degrees
-        TurnLeftTime(TurnSpeed, 350);
-        //Move Forward for almost 5ft
-        DriveForwardTime(DriveSpeed, 1450);
-        //Sense beacons
-        TurnRightTime(TurnSpeed,50);
-        SenseRed();
-        StraightenLeft(TurnSpeed,50);
-        DriveForwardTime(DriveSpeed,50);
-        ResetPoker();
-        DriveBackwardTime(DriveSpeed,600);
-        TurnRightTime(TurnSpeed, 350);
-        DriveForwardTime(DriveSpeed, 1200);
-        TurnLeftTime(TurnSpeed, 350);
-        DriveForwardTime(DriveSpeed, 550);
-        TurnRightTime(TurnSpeed,50);
-        SenseRed();
-        StraightenLeft(TurnSpeed,50);
-        DriveForwardTime(DriveSpeed, 50);
-        ResetPoker();
-        DriveBackwardTime(DriveSpeed, 600);
-        TurnLeftTime(TurnSpeed, 525);
-        DriveForwardTime(DriveSpeed, 1500);
-        TurnRightTime(TurnSpeed, 350);
-        DriveForwardTime(DriveSpeed, 1600);
-        Shoot(ShootPower, 2000);
-
     }
     //A lot of Methods for Auto
     public void DriveForward(double power){
@@ -119,7 +82,7 @@ public class ZippyAutoRedAlliance1 extends LinearOpMode {
         backRight.setPower(-power);
     }
     public void TimeElapsed(long time) {
-       sleep(time);
+        sleep(time);
     }
     public void DriveForwardTime(double power, long time){
         DriveForward(power);
